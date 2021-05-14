@@ -1,4 +1,4 @@
 
 export const App = () => {
-  return <div>hey</div>;
+  return <div>test</div>;
 };
