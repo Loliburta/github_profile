@@ -1,0 +1,2 @@
+(this["webpackJsonpgithub-profile"]=this["webpackJsonpgithub-profile"]||[]).push([[0],{10:function(e,t,n){"use strict";n.r(t);var i=n(1),c=n.n(i),r=n(3),o=n.n(r),s=(n(8),n(0)),u=function(){return Object(s.jsx)("div",{children:"hey"})};o.a.render(Object(s.jsx)(c.a.StrictMode,{children:Object(s.jsx)(u,{})}),document.getElementById("root"))},8:function(e,t,n){}},[[10,1,2]]]);
+//# sourceMappingURL=main.686e9c93.chunk.js.map
