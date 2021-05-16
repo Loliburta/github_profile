@@ -13,6 +13,76 @@ button {
   border: none;
 }
 
+a {
+  text-decoration: none;
+  color: #2bc016;
+}
+
+.profile * {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.profile {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: #0b0c10;
+  color: #66fcf1;
+}
+
+.profile__hero {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 0 auto;
+  text-align: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.profile__hero__avatar {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.profile__hero__avatar__img {
+  width: 100px;
+  border-radius: 50px;
+  border: 7px solid #2bc016;
+}
+
+.profile__hero__name {
+  font-size: clamp(25px, 10vw, 35px);
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.profile__hero__bio {
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-size: clamp(12px, 5.2vw, 15px);
+}
+
+.profile__hero__about {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
 .search {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -32,21 +102,28 @@ button {
 }
 
 .search__input {
-  border: 2px solid green;
+  border: 2px solid #000;
   border-radius: 3px;
-  width: clamp(250px, 40vw, 700px);
+  width: clamp(270px, 45vw, 700px);
   height: 35px;
   color: white;
-  margin-bottom: 20px;
-  padding-left: 10px;
+  margin-bottom: 30px;
+  padding-left: 15px;
 }
 
 .search__button {
-  border: 2px solid green;
+  border: 2px solid #31231e;
   border-radius: 3px;
-  width: clamp(90px, 10vw, 120px);
-  height: 38px;
+  width: 120px;
+  height: 35px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   color: white;
+  cursor: pointer;
 }
 
 * {
@@ -61,8 +138,8 @@ body,
   height: 100%;
   margin: 0;
   padding: 0;
-  background-color: #17171a;
-  color: #8892b0;
+  background-color: #cafafe;
+  color: #fff;
   -webkit-font-smoothing: antialiased;
 }
 /*# sourceMappingURL=index.css.map */

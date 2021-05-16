@@ -1,3 +1,5 @@
+@import "../../utilities/Variables";
+
 .search {
   display: flex;
   flex-direction: column;
@@ -6,19 +8,22 @@
   margin: 0 auto;
   height: 100vh;
   &__input {
-    border: 2px solid green;
+    border: 2px solid $black;
     border-radius: 3px;
-    width: clamp(250px, 40vw, 700px);
+    width: clamp(270px, 45vw, 700px);
     height: 35px;
     color: white;
-    margin-bottom: 20px;
-    padding-left: 10px;
+    margin-bottom: 30px;
+    padding-left: 15px;
   }
   &__button {
-    border: 2px solid green;
+    border: 2px solid #31231e;
     border-radius: 3px;
-    width: clamp(90px, 10vw, 120px);
-    height: 38px;
+    width: 120px;
+    height: 35px;
+    justify-content: center;
+    align-items: center;
     color: white;
+    cursor: pointer;
   }
 }

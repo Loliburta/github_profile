@@ -1,0 +1,37 @@
+@import "../../utilities/Variables";
+
+.profile * {
+  display: flex;
+}
+.profile {
+  display: flex;
+  flex-direction: column;
+  background-color: $darkBlue;
+  color: $softCyan;
+  &__hero {
+    flex-direction: column;
+    margin: 0 auto;
+    text-align: center;
+    justify-content: center;
+    &__avatar {
+      justify-content: center;
+      &__img {
+        width: 100px;
+        border-radius: 50px;
+        border: 7px solid $kellyGreen;
+      }
+    }
+    &__name {
+      font-size: clamp($M, 10vw, $MMM);
+      justify-content: center;
+    }
+    &__bio {
+      flex-wrap: wrap;
+      justify-content: center;
+      font-size: clamp($S, 5.2vw, $SS);
+    }
+    &__about {
+      flex-direction: row;
+    }
+  }
+}

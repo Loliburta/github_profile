@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { SetDate } from "../../utilities/SetDate";
 
 const d = {
   login: "Loliburta",
@@ -178,6 +179,7 @@ interface Props {
 export const Profile: React.FC<Props> = ({ username }) => {
   const [data, setData] = useState<any>({});
   const [repositories, setRepositories] = useState([{}]);
+  const [createdAt, setCreatedAt] = useState("");
 
   useEffect(() => {
     (async () => {
@@ -197,23 +199,36 @@ export const Profile: React.FC<Props> = ({ username }) => {
       //repositories.size
       //repositories.watchers
       //repositories.forks
+      setCreatedAt(SetDate(d.created_at));
     })();
   }, []);
 
   return (
-    <div>
-      <ul>
-        <li>{data.login}</li>
-        <li>{data.html_url}</li>
-        <li>{data.avatar_url}</li>
-        <li>{data.location}</li>
-        <li>{data.blog}</li>
-        <li>{data.bio}</li>
-        <li>{data.public_repos}</li>
-        <li>{data.following}</li>
-        <li>{data.followers}</li>
-        <li>{data.created_at}</li>
-      </ul>
+    <div className="profile">
+      <div className="profile__hero">
+        <div className="profile__hero__avatar">
+          <img
+            src={data.avatar_url}
+            alt="user avatar"
+            className="profile__hero__avatar__img"
+          />
+        </div>
+
+        <a className="profile__hero__name" href={data.html_url}>
+          {data.login}
+        </a>
+        <div className="profile__hero__bio">{data.bio}</div>
+        <div className="profile__hero__about">
+          <div className="profile__hero__about__location">{data.location}</div>
+          <div className="profile__hero__about__joined">Joined {createdAt}</div>
+        </div>
+        <ul>
+          <li>{data.blog}</li>
+          <li>{data.public_repos}</li>
+          <li>{data.following}</li>
+          <li>{data.followers}</li>
+        </ul>
+      </div>
     </div>
   );
 };
