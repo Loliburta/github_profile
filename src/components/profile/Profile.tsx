@@ -1,5 +1,8 @@
 import { useState, useEffect } from "react";
 import { SetDate } from "../../utilities/SetDate";
+import { Icon } from "@iconify/react";
+import calendar from "@iconify-icons/bi/calendar-event";
+import location from "@iconify-icons/akar-icons/location";
 
 const d = {
   login: "Loliburta",
@@ -204,31 +207,79 @@ export const Profile: React.FC<Props> = ({ username }) => {
   }, []);
 
   return (
-    <div className="profile">
-      <div className="profile__hero">
-        <div className="profile__hero__avatar">
-          <img
-            src={data.avatar_url}
-            alt="user avatar"
-            className="profile__hero__avatar__img"
-          />
-        </div>
+    <>
+      <div className="profile">
+        <div className="profile__hero">
+          <div className="profile__hero__avatar">
+            <img
+              src={data.avatar_url}
+              alt="user avatar"
+              className="profile__hero__avatar__img"
+            />
+          </div>
 
-        <a className="profile__hero__name" href={data.html_url}>
-          {data.login}
-        </a>
-        <div className="profile__hero__bio">{data.bio}</div>
-        <div className="profile__hero__about">
-          <div className="profile__hero__about__location">{data.location}</div>
-          <div className="profile__hero__about__joined">Joined {createdAt}</div>
+          <a className="profile__hero__name" href={data.html_url}>
+            {data.login}
+          </a>
+          <div className="profile__hero__bio">{data.bio}</div>
+          <div className="profile__hero__about">
+            <div className="profile__hero__about__location">
+              <Icon
+                className="profile__hero__about__about__icon"
+                icon={location}
+              />
+              <div className="profile__hero__about__location__text">
+                {data.location}
+              </div>
+            </div>
+            <div className="profile__hero__about__joined">
+              <Icon
+                className="profile__hero__about__joined__icon"
+                icon={calendar}
+              />
+              <div className="profile__hero__about__joined__text">
+                Joined {createdAt}
+              </div>
+            </div>
+          </div>
+          {data.blog ? (
+            <div className="profile__hero__site">
+              <a href={`https://${data.blog}`} rel="noopener noreferrer">
+                Personal Site
+              </a>
+            </div>
+          ) : (
+            ""
+          )}
+          <div className="profile__hero__info">
+            <div className="profile__hero__info__item">
+              <div className="profile__hero__info__item__count">
+                {data.public_repos}
+              </div>
+              <div className="profile__hero__info__item__text">
+                REPOSITORIES
+              </div>
+            </div>
+            <div className="profile__hero__info__item">
+              <div className="profile__hero__info__item__count">
+                {data.following}
+              </div>
+              <div className="profile__hero__info__item__text">FOLLOWING</div>
+            </div>
+            <div className="profile__hero__info__item">
+              <div className="profile__hero__info__item__count">
+                {data.followers}
+              </div>
+              <div className="profile__hero__info__item__text">FOLLOWERS</div>
+            </div>
+          </div>
         </div>
-        <ul>
-          <li>{data.blog}</li>
-          <li>{data.public_repos}</li>
-          <li>{data.following}</li>
-          <li>{data.followers}</li>
-        </ul>
+        <div className="profile__graphs">
+          <div className="profile__graphs__graph">{data.public_repos}</div>
+          <div className="profile__graphs__graph">{data.following}</div>
+          <div className="profile__graphs__graph">{data.followers}</div>
+        </div>
       </div>
-    </div>
+    </>
   );
 };
