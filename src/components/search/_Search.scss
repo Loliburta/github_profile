@@ -1,0 +1,24 @@
+.search {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  height: 100vh;
+  &__input {
+    border: 2px solid green;
+    border-radius: 3px;
+    width: clamp(250px, 40vw, 700px);
+    height: 35px;
+    color: white;
+    margin-bottom: 20px;
+    padding-left: 10px;
+  }
+  &__button {
+    border: 2px solid green;
+    border-radius: 3px;
+    width: clamp(90px, 10vw, 120px);
+    height: 38px;
+    color: white;
+  }
+}

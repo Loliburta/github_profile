@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const d = {
   login: "Loliburta",
@@ -172,44 +172,40 @@ const r = [
     default_branch: "master",
   },
 ];
-export const Profile = () => {
+interface Props {
+  username: string;
+}
+export const Profile: React.FC<Props> = ({ username }) => {
   const [data, setData] = useState<any>({});
-  const [username, setUsername] = useState("");
   const [repositories, setRepositories] = useState([{}]);
 
-  const onChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setUsername(e.target.value);
-  };
-  const submitHandler = async (
-    event: React.MouseEvent<HTMLButtonElement | HTMLAnchorElement>
-  ) => {
-    event.preventDefault();
-    // const profile = await fetch(`https://api.github.com/users/${username}`);
-    // const profileJson = await profile.json();
-    // setData(profileJson);
-    // const repositories = await fetch(profileJson.repos_url);
-    // setRepositories(await repositories.json());
-    setData(d);
-    setRepositories(r);
-    // todo for each repository get language add to array and show on chart.js
-  
-    //repositories.name
-    //repositories.html_url
-    //repositories.description
-    //repositories.language
-    //repositories.size
-    //repositories.watchers
-    //repositories.forks
-};
+  useEffect(() => {
+    (async () => {
+      // const profile = await fetch(`https://api.github.com/users/${username}`);
+      // const profileJson = await profile.json();
+      // setData(profileJson);
+      // const repositories = await fetch(profileJson.repos_url);
+      // setRepositories(await repositories.json());
+      setData(d);
+      setRepositories(r);
+      // todo for each repository get language add to array and show on chart.js
+
+      //repositories.name
+      //repositories.html_url
+      //repositories.description
+      //repositories.language
+      //repositories.size
+      //repositories.watchers
+      //repositories.forks
+    })();
+  }, []);
+
   return (
     <div>
-      <input type="text" value={username} onChange={onChangeHandler} />
-      <button type="submit" onClick={submitHandler}>
-        Search
-      </button>
       <ul>
         <li>{data.login}</li>
         <li>{data.html_url}</li>
+        <li>{data.avatar_url}</li>
         <li>{data.location}</li>
         <li>{data.blog}</li>
         <li>{data.bio}</li>
@@ -217,7 +213,6 @@ export const Profile = () => {
         <li>{data.following}</li>
         <li>{data.followers}</li>
         <li>{data.created_at}</li>
-
       </ul>
     </div>
   );

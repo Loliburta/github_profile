@@ -1,9 +1,8 @@
-import { Profile } from "./profile/Profile";
-
+import { Search } from "./search/Search";
 export const App = () => {
   return (
     <div>
-      <Profile />
+      <Search />
     </div>
   );
 };
