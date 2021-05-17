@@ -5,6 +5,7 @@ export const DonutGraph = () => {
       type="Doughnut"
       data={{
         labels: ["Red", "Blue", "Yellow"],
+        redraw: true,
         datasets: [
           {
             label: "My First Dataset",
@@ -18,7 +19,6 @@ export const DonutGraph = () => {
           },
         ],
       }}
-  
     />
   );
 };

@@ -6,6 +6,9 @@ import location from "@iconify-icons/akar-icons/location";
 import { BarGraph } from "../graphs/BarGraph";
 import { PieGraph } from "../graphs/PieGraph";
 import { DonutGraph } from "../graphs/DonutGraph";
+import GhPolyglot from "gh-polyglot";
+
+import { r } from "../../utilities/DummyRepos";
 
 const d = {
   login: "Loliburta",
@@ -43,141 +46,13 @@ const d = {
   updated_at: "2021-05-14T17:36:13Z",
 };
 
-const r = [
-  {
-    id: 333186597,
-    node_id: "MDEwOlJlcG9zaXRvcnkzMzMxODY1OTc=",
-    name: "Allegro_price_tracker",
-    full_name: "Loliburta/Allegro_price_tracker",
-    private: false,
-    owner: {
-      login: "Loliburta",
-      id: 53707739,
-      node_id: "MDQ6VXNlcjUzNzA3NzM5",
-      avatar_url: "https://avatars.githubusercontent.com/u/53707739?v=4",
-      gravatar_id: "",
-      url: "https://api.github.com/users/Loliburta",
-      html_url: "https://github.com/Loliburta",
-      followers_url: "https://api.github.com/users/Loliburta/followers",
-      following_url:
-        "https://api.github.com/users/Loliburta/following{/other_user}",
-      gists_url: "https://api.github.com/users/Loliburta/gists{/gist_id}",
-      starred_url:
-        "https://api.github.com/users/Loliburta/starred{/owner}{/repo}",
-      subscriptions_url: "https://api.github.com/users/Loliburta/subscriptions",
-      organizations_url: "https://api.github.com/users/Loliburta/orgs",
-      repos_url: "https://api.github.com/users/Loliburta/repos",
-      events_url: "https://api.github.com/users/Loliburta/events{/privacy}",
-      received_events_url:
-        "https://api.github.com/users/Loliburta/received_events",
-      type: "User",
-      site_admin: false,
-    },
-    html_url: "https://github.com/Loliburta/Allegro_price_tracker",
-    description:
-      "A web app that keeps track of a user's specified product and notifies him when the price goes down via email",
-    fork: false,
-    url: "https://api.github.com/repos/Loliburta/Allegro_price_tracker",
-    forks_url:
-      "https://api.github.com/repos/Loliburta/Allegro_price_tracker/forks",
-    keys_url:
-      "https://api.github.com/repos/Loliburta/Allegro_price_tracker/keys{/key_id}",
-    collaborators_url:
-      "https://api.github.com/repos/Loliburta/Allegro_price_tracker/collaborators{/collaborator}",
-    teams_url:
-      "https://api.github.com/repos/Loliburta/Allegro_price_tracker/teams",
-    hooks_url:
-      "https://api.github.com/repos/Loliburta/Allegro_price_tracker/hooks",
-    issue_events_url:
-      "https://api.github.com/repos/Loliburta/Allegro_price_tracker/issues/events{/number}",
-    events_url:
-      "https://api.github.com/repos/Loliburta/Allegro_price_tracker/events",
-    assignees_url:
-      "https://api.github.com/repos/Loliburta/Allegro_price_tracker/assignees{/user}",
-    branches_url:
-      "https://api.github.com/repos/Loliburta/Allegro_price_tracker/branches{/branch}",
-    tags_url:
-      "https://api.github.com/repos/Loliburta/Allegro_price_tracker/tags",
-    blobs_url:
-      "https://api.github.com/repos/Loliburta/Allegro_price_tracker/git/blobs{/sha}",
-    git_tags_url:
-      "https://api.github.com/repos/Loliburta/Allegro_price_tracker/git/tags{/sha}",
-    git_refs_url:
-      "https://api.github.com/repos/Loliburta/Allegro_price_tracker/git/refs{/sha}",
-    trees_url:
-      "https://api.github.com/repos/Loliburta/Allegro_price_tracker/git/trees{/sha}",
-    statuses_url:
-      "https://api.github.com/repos/Loliburta/Allegro_price_tracker/statuses/{sha}",
-    languages_url:
-      "https://api.github.com/repos/Loliburta/Allegro_price_tracker/languages",
-    stargazers_url:
-      "https://api.github.com/repos/Loliburta/Allegro_price_tracker/stargazers",
-    contributors_url:
-      "https://api.github.com/repos/Loliburta/Allegro_price_tracker/contributors",
-    subscribers_url:
-      "https://api.github.com/repos/Loliburta/Allegro_price_tracker/subscribers",
-    subscription_url:
-      "https://api.github.com/repos/Loliburta/Allegro_price_tracker/subscription",
-    commits_url:
-      "https://api.github.com/repos/Loliburta/Allegro_price_tracker/commits{/sha}",
-    git_commits_url:
-      "https://api.github.com/repos/Loliburta/Allegro_price_tracker/git/commits{/sha}",
-    comments_url:
-      "https://api.github.com/repos/Loliburta/Allegro_price_tracker/comments{/number}",
-    issue_comment_url:
-      "https://api.github.com/repos/Loliburta/Allegro_price_tracker/issues/comments{/number}",
-    contents_url:
-      "https://api.github.com/repos/Loliburta/Allegro_price_tracker/contents/{+path}",
-    compare_url:
-      "https://api.github.com/repos/Loliburta/Allegro_price_tracker/compare/{base}...{head}",
-    merges_url:
-      "https://api.github.com/repos/Loliburta/Allegro_price_tracker/merges",
-    archive_url:
-      "https://api.github.com/repos/Loliburta/Allegro_price_tracker/{archive_format}{/ref}",
-    downloads_url:
-      "https://api.github.com/repos/Loliburta/Allegro_price_tracker/downloads",
-    issues_url:
-      "https://api.github.com/repos/Loliburta/Allegro_price_tracker/issues{/number}",
-    pulls_url:
-      "https://api.github.com/repos/Loliburta/Allegro_price_tracker/pulls{/number}",
-    milestones_url:
-      "https://api.github.com/repos/Loliburta/Allegro_price_tracker/milestones{/number}",
-    notifications_url:
-      "https://api.github.com/repos/Loliburta/Allegro_price_tracker/notifications{?since,all,participating}",
-    labels_url:
-      "https://api.github.com/repos/Loliburta/Allegro_price_tracker/labels{/name}",
-    releases_url:
-      "https://api.github.com/repos/Loliburta/Allegro_price_tracker/releases{/id}",
-    deployments_url:
-      "https://api.github.com/repos/Loliburta/Allegro_price_tracker/deployments",
-    created_at: "2021-01-26T19:00:54Z",
-    updated_at: "2021-02-26T21:40:01Z",
-    pushed_at: "2021-01-26T19:03:54Z",
-    git_url: "git://github.com/Loliburta/Allegro_price_tracker.git",
-    ssh_url: "git@github.com:Loliburta/Allegro_price_tracker.git",
-    clone_url: "https://github.com/Loliburta/Allegro_price_tracker.git",
-    svn_url: "https://github.com/Loliburta/Allegro_price_tracker",
-    homepage: "",
-    size: 5,
-    stargazers_count: 0,
-    watchers_count: 0,
-    language: "Python",
-    has_issues: true,
-    has_projects: true,
-    has_downloads: true,
-    has_wiki: true,
-    has_pages: false,
-    forks_count: 0,
-    mirror_url: null,
-    archived: false,
-    disabled: false,
-    open_issues_count: 0,
-    license: null,
-    forks: 0,
-    open_issues: 0,
-    watchers: 0,
-    default_branch: "master",
-  },
+const l = [
+  { label: "JavaScript", value: 16, color: "#f1e05a" },
+  { label: "CSS", value: 9, color: "#563d7c" },
+  { label: "HTML", value: 7, color: "#e34c26" },
+  { label: "Vue", value: 5, color: "#2c3e50" },
+  { label: "Others", value: 2, color: "#ccc" },
+  { label: "Shell", value: 2, color: "#89e051" },
 ];
 
 interface Props {
@@ -185,7 +60,12 @@ interface Props {
 }
 export const Profile: React.FC<Props> = ({ username }) => {
   const [data, setData] = useState<any>({});
-  const [repositories, setRepositories] = useState([{}]);
+  const [repositories, setRepositories] = useState([
+    { stargazers_count: 0, fork: false, name: "" },
+  ]);
+  const [languages, setLanguages] = useState([
+    { label: "", value: 0, color: "" },
+  ]);
   const [createdAt, setCreatedAt] = useState("");
 
   useEffect(() => {
@@ -193,7 +73,7 @@ export const Profile: React.FC<Props> = ({ username }) => {
       // const profile = await fetch(`https://api.github.com/users/${username}`);
       // const profileJson = await profile.json();
       // setData(profileJson);
-      // const repositories = await fetch(profileJson.repos_url);
+      // const repositories = await fetch(`${profileJson.repos_url}?per_page=100`);
       // setRepositories(await repositories.json());
       setData(d);
       setRepositories(r);
@@ -207,6 +87,18 @@ export const Profile: React.FC<Props> = ({ username }) => {
       //repositories.watchers
       //repositories.forks
       setCreatedAt(SetDate(d.created_at));
+      // const getLangData = () => {
+      //   const me = new GhPolyglot(`${"Loliburta"}`);
+      //   me.userStats((err: any, stats: any) => {
+      //     if (err) {
+      //       console.error("Error:", err);
+      //     }
+      //     console.log(stats);
+      //     setLanguages(stats);
+      //   });
+      // };
+      // getLangData();
+      setLanguages(l);
     })();
   }, []);
 
@@ -282,12 +174,17 @@ export const Profile: React.FC<Props> = ({ username }) => {
           <div className="profile__graphs__graph">{data.following}</div>
           <div className="profile__graphs__graph">{data.followers}</div> */}
           <div className="profile__graphs__graph">
-            <PieGraph />
+            <div className="profile__graphs__graph__title">Top Languages</div>
+            <PieGraph languages={languages} />
           </div>
           <div className="profile__graphs__graph">
-            <BarGraph />
+            <div className="profile__graphs__graph__title">Most Starred</div>
+            <BarGraph repositories={repositories} />
           </div>
           <div className="profile__graphs__graph">
+            <div className="profile__graphs__graph__title">
+              Stars per language
+            </div>
             <DonutGraph />
           </div>
         </div>

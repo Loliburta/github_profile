@@ -1,16 +1,51 @@
 import React from "react";
 import { Bar } from "react-chartjs-2";
-
-export const BarGraph = () => {
+interface Props {
+  repositories: { stargazers_count: number; fork: boolean; name: string }[];
+}
+export const BarGraph: React.FC<Props> = ({ repositories }) => {
+  const data = repositories
+    .filter((repo) => !repo.fork)
+    .sort(
+      (a: { stargazers_count: number }, b: { stargazers_count: number }) =>
+        b.stargazers_count - a.stargazers_count
+    )
+    .slice(0, 4);
+  const labels = data.map((repo) => repo.name);
   return (
     <Bar
+      className="grph"
       type="Bar"
+      options={{
+        maintainAspectRatio: false,
+        scales: {
+          x: {
+            ticks: {
+              font: {
+                size: 10,
+              },
+            },
+          },
+        },
+        plugins: {
+          legend: {
+            labels: {
+              // This more specific font property overrides the global property
+              font: {
+                size: -50,
+              },
+            },
+          },
+        },
+      }}
       data={{
-        labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+        labels: labels,
+        redraw: true,
+
         datasets: [
           {
-            label: "# of Votes",
-            data: [12, 19, 3, 5, 2, 3],
+            label: "",
+            data: data,
             backgroundColor: [
               "rgba(255, 99, 132, 0.2)",
               "rgba(54, 162, 235, 0.2)",
@@ -31,7 +66,6 @@ export const BarGraph = () => {
           },
         ],
       }}
-      height={300}
     />
   );
 };
