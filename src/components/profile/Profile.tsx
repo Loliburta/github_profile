@@ -3,6 +3,9 @@ import { SetDate } from "../../utilities/SetDate";
 import { Icon } from "@iconify/react";
 import calendar from "@iconify-icons/bi/calendar-event";
 import location from "@iconify-icons/akar-icons/location";
+import { BarGraph } from "../graphs/BarGraph";
+import { PieGraph } from "../graphs/PieGraph";
+import { DonutGraph } from "../graphs/DonutGraph";
 
 const d = {
   login: "Loliburta",
@@ -176,6 +179,7 @@ const r = [
     default_branch: "master",
   },
 ];
+
 interface Props {
   username: string;
 }
@@ -217,7 +221,6 @@ export const Profile: React.FC<Props> = ({ username }) => {
               className="profile__hero__avatar__img"
             />
           </div>
-
           <a className="profile__hero__name" href={data.html_url}>
             {data.login}
           </a>
@@ -275,9 +278,18 @@ export const Profile: React.FC<Props> = ({ username }) => {
           </div>
         </div>
         <div className="profile__graphs">
-          <div className="profile__graphs__graph">{data.public_repos}</div>
+          {/* <div className="profile__graphs__graph">{data.public_repos}</div>
           <div className="profile__graphs__graph">{data.following}</div>
-          <div className="profile__graphs__graph">{data.followers}</div>
+          <div className="profile__graphs__graph">{data.followers}</div> */}
+          <div className="profile__graphs__graph">
+            <PieGraph />
+          </div>
+          <div className="profile__graphs__graph">
+            <BarGraph />
+          </div>
+          <div className="profile__graphs__graph">
+            <DonutGraph />
+          </div>
         </div>
       </div>
     </>

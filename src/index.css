@@ -17,7 +17,7 @@ button {
 
 a {
   text-decoration: none;
-  color: #2bc016;
+  color: #bced09;
 }
 
 .profile * {
@@ -34,7 +34,7 @@ a {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  color: #66fcf1;
+  color: #6af8ef;
 }
 
 .profile__hero {
@@ -63,8 +63,8 @@ a {
 
 .profile__hero__avatar__img {
   width: 100px;
+  border: 7px solid #4cbb17;
   border-radius: 50px;
-  border: 7px solid #2bc016;
 }
 
 .profile__hero__name {
@@ -73,6 +73,7 @@ a {
       -ms-flex-pack: center;
           justify-content: center;
   margin-bottom: 15px;
+  font-family: "Space Mono", monospace;
 }
 
 .profile__hero__bio {
@@ -81,7 +82,7 @@ a {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  font-size: clamp(13px, 2.5vw, 15px);
+  font-size: clamp(12px, 2.5vw, 15px);
   margin-bottom: 15px;
 }
 
@@ -94,7 +95,7 @@ a {
           flex-direction: row;
   width: clamp(275px, 65vw, 400px);
   margin: 0 auto;
-  font-size: clamp(13px, 2.5vw, 15px);
+  font-size: clamp(12px, 2.5vw, 15px);
   margin-bottom: 15px;
 }
 
@@ -105,8 +106,8 @@ a {
 }
 
 .profile__hero__about__location__icon {
-  width: clamp(13px, 2.5vw, 15px);
-  height: clamp(13px, 2.5vw, 15px);
+  width: clamp(12px, 2.5vw, 15px);
+  height: clamp(12px, 2.5vw, 15px);
 }
 
 .profile__hero__about__location__text {
@@ -121,8 +122,8 @@ a {
 }
 
 .profile__hero__about__joined__icon {
-  width: clamp(13px, 2.5vw, 15px);
-  height: clamp(13px, 2.5vw, 15px);
+  width: clamp(12px, 2.5vw, 15px);
+  height: clamp(12px, 2.5vw, 15px);
 }
 
 .profile__hero__about__joined__text {
@@ -136,6 +137,8 @@ a {
       flex-wrap: wrap;
   font-size: clamp(20px, 5vw, 25px);
   margin-bottom: 25px;
+  letter-spacing: -0.5px;
+  font-family: "Space Mono", monospace;
 }
 
 .profile__hero__info {
@@ -145,6 +148,8 @@ a {
           flex-direction: row;
   -ms-flex-pack: distribute;
       justify-content: space-around;
+  margin: 0 auto;
+  width: clamp(280px, 70vw, 600px);
 }
 
 .profile__hero__info__item {
@@ -159,10 +164,10 @@ a {
       -ms-flex-pack: end;
           justify-content: flex-end;
   padding-bottom: 10px;
-  font-size: clamp(13px, 4vw, 15px);
+  font-size: clamp(11px, 2.8vw, 15px);
   font-family: "Space Mono", monospace;
-  width: 125px;
-  height: 75px;
+  width: clamp(90px, 20vw, 125px);
+  height: clamp(60px, 14vw, 75px);
   border-radius: 3px;
   background-color: #1d1f2b;
 }
@@ -182,10 +187,12 @@ a {
   margin: 0 auto;
   margin-top: -50px;
   width: 100%;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 .profile__graphs__graph {
-  background-color: red;
+  background-color: white;
   border-radius: 3px;
   width: 250px;
   height: 300px;

@@ -23,19 +23,20 @@
       margin-bottom: 15px;
       &__img {
         width: 100px;
-        border-radius: 50px;
         border: 7px solid $kellyGreen;
+        border-radius: 50px;
       }
     }
     &__name {
-      font-size: clamp($M, 10vw, $MMM);
+      font-size: clamp($MM, 10vw, $L);
       justify-content: center;
       margin-bottom: 15px;
+      font-family: $Mono;
     }
     &__bio {
       flex-wrap: wrap;
       justify-content: center;
-      font-size: clamp($S, 2.5vw, $SS);
+      font-size: clamp($SS, 2.5vw, $SSS);
       margin-bottom: 15px;
     }
     &__about {
@@ -43,14 +44,14 @@
       flex-direction: row;
       width: clamp(275px, 65vw, 400px);
       margin: 0 auto;
-      font-size: clamp($S, 2.5vw, $SS);
+      font-size: clamp($SS, 2.5vw, $SSS);
       margin-bottom: 15px;
 
       &__location {
         align-items: center;
         &__icon {
-          width: clamp($S, 2.5vw, $SS);
-          height: clamp($S, 2.5vw, $SS);
+          width: clamp($SS, 2.5vw, $SSS);
+          height: clamp($SS, 2.5vw, $SSS);
         }
         &__text {
           font-family: $Mono;
@@ -60,8 +61,8 @@
       &__joined {
         align-items: center;
         &__icon {
-          width: clamp($S, 2.5vw, $SS);
-          height: clamp($S, 2.5vw, $SS);
+          width: clamp($SS, 2.5vw, $SSS);
+          height: clamp($SS, 2.5vw, $SSS);
         }
         &__text {
           font-family: $Mono;
@@ -72,21 +73,26 @@
     &__site {
       margin: 0 auto;
       flex-wrap: wrap;
-      font-size: clamp($SSS, 5vw, $M);
+      font-size: clamp($M, 5vw, $MM);
       margin-bottom: 25px;
+      letter-spacing: -0.5px;
+      font-family: $Mono;
     }
     &__info {
       flex-direction: row;
       justify-content: space-around;
+      margin: 0 auto;
+      width: clamp(280px, 70vw, 600px);
       &__item {
         flex-direction: column;
         align-items: center;
         justify-content: flex-end;
         padding-bottom: 10px;
-        font-size: clamp($S, 4vw, $SS);
+        font-size: clamp(11px, 2.8vw, $SSS);
         font-family: $Mono;
-        width: 125px;
-        height: 75px;
+        width: clamp(90px, 20vw, 125px);
+        height: clamp(60px, 14vw, 75px);
+
         border-radius: 3px;
         background-color: $lighterDarkBlue;
         &__text {
@@ -102,8 +108,9 @@
     margin: 0 auto;
     margin-top: -50px;
     width: 100%;
+    flex-wrap: wrap;
     &__graph {
-      background-color: red;
+      background-color: white;
       border-radius: 3px;
       width: 250px;
       height: 300px;
