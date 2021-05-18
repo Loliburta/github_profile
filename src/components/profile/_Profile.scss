@@ -6,18 +6,16 @@
 .profile {
   display: flex;
   flex-direction: column;
-  color: $softCyan;
   &__hero {
     flex-direction: column;
     width: 100vw;
-    padding-top: 20px;
+    padding-top: 40px;
     max-width: 100%;
     margin: 0 auto;
     text-align: center;
     justify-content: center;
     background-color: $darkBlue;
     padding-bottom: 100px;
-
     &__avatar {
       justify-content: center;
       margin-bottom: 15px;
@@ -30,7 +28,16 @@
     &__name {
       font-size: clamp($MM, 10vw, $L);
       justify-content: center;
-      margin-bottom: 15px;
+      margin-bottom: 5px;
+      font-family: $Mono;
+      letter-spacing: -0.5px;
+    }
+    &__site {
+      margin: 0 auto;
+      flex-wrap: wrap;
+      font-size: clamp($M, 5vw, 15px);
+      margin-bottom: 25px;
+      letter-spacing: -0.9px;
       font-family: $Mono;
     }
     &__bio {
@@ -45,8 +52,7 @@
       width: clamp(275px, 65vw, 400px);
       margin: 0 auto;
       font-size: clamp($SS, 2.5vw, $SSS);
-      margin-bottom: 15px;
-
+      margin-bottom: 40px;
       &__location {
         align-items: center;
         &__icon {
@@ -70,19 +76,13 @@
         }
       }
     }
-    &__site {
-      margin: 0 auto;
-      flex-wrap: wrap;
-      font-size: clamp($M, 5vw, $MM);
-      margin-bottom: 25px;
-      letter-spacing: -0.5px;
-      font-family: $Mono;
-    }
+
     &__info {
       flex-direction: row;
       justify-content: space-around;
       margin: 0 auto;
       width: clamp(280px, 70vw, 600px);
+      margin-bottom: 20px;
       &__item {
         flex-direction: column;
         align-items: center;
@@ -102,30 +102,4 @@
       }
     }
   }
-  &__graphs {
-    flex-direction: row;
-    justify-content: space-around;
-    margin: 0 auto;
-    margin-top: -50px;
-    width: clamp(300px, 100vw, 1500px);
-    flex-wrap: wrap;
-    &__graph {
-      flex-direction: column;
-      background-color: white;
-      border-radius: 3px;
-      width: clamp(280px, 35vw, 400px);
-      height: clamp(350px, 40vw, 450px);
-      padding: 10px clamp(5px, 1vw, 20px);
-      justify-content: center;
-      align-items: center;
-      &__title {
-        color: $darkBlue;
-        height: 100%;
-        font-size: $MM;
-      }
-    }
-  }
-}
-.grph {
-  max-height: clamp(300px, 30vw, 350px);
 }

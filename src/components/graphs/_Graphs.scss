@@ -1,0 +1,40 @@
+@import "../../utilities/Variables";
+.profile {
+  display: flex;
+  &__graphs {
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 0 auto;
+    margin-top: -50px;
+    width: clamp(300px, 100vw, 1500px);
+    flex-wrap: wrap;
+    &__graph {
+      flex-direction: column;
+      background-color: white;
+      border-radius: 3px;
+      width: clamp(280px, 35vw, 400px);
+      height: clamp(350px, 40vw, 450px);
+      padding: 10px clamp(5px, 1vw, 20px);
+      justify-content: center;
+      align-items: center;
+      &__title {
+        color: $darkBlue;
+        height: 100%;
+        font-size: $MM;
+      }
+      &__barGraph {
+        max-height: clamp(300px, 30vw, 350px);
+      }
+      &__message {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        font-size: 18px;
+        color: black;
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+}

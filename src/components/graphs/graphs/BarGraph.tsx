@@ -14,7 +14,7 @@ export const BarGraph: React.FC<Props> = ({ repositories }) => {
   const labels = data.map((repo) => repo.name);
   return (
     <Bar
-      className="grph"
+      className="profile__graphs__graph__barGraph"
       type="Bar"
       options={{
         maintainAspectRatio: false,
@@ -30,7 +30,6 @@ export const BarGraph: React.FC<Props> = ({ repositories }) => {
         plugins: {
           legend: {
             labels: {
-              // This more specific font property overrides the global property
               font: {
                 size: -50,
               },

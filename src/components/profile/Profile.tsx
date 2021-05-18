@@ -3,12 +3,11 @@ import { SetDate } from "../../utilities/SetDate";
 import { Icon } from "@iconify/react";
 import calendar from "@iconify-icons/bi/calendar-event";
 import location from "@iconify-icons/akar-icons/location";
-import { BarGraph } from "../graphs/BarGraph";
-import { PieGraph } from "../graphs/PieGraph";
-import { DonutGraph } from "../graphs/DonutGraph";
+
 import GhPolyglot from "gh-polyglot";
 
 import { r } from "../../utilities/DummyRepos";
+import { Graphs } from "../graphs/Graphs";
 
 const d = {
   login: "Loliburta",
@@ -58,11 +57,17 @@ const l = [
 interface Props {
   username: string;
 }
+
 export const Profile: React.FC<Props> = ({ username }) => {
   const [data, setData] = useState<any>({});
-  const [repositories, setRepositories] = useState([
-    { stargazers_count: 0, fork: false, name: "" },
-  ]);
+  const [repositories, setRepositories] = useState<
+    {
+      stargazers_count: number;
+      fork: boolean;
+      name: string;
+      language: string | null;
+    }[]
+  >([{ stargazers_count: 0, fork: false, name: "", language: "" }]);
   const [languages, setLanguages] = useState([
     { label: "", value: 0, color: "" },
   ]);
@@ -116,6 +121,15 @@ export const Profile: React.FC<Props> = ({ username }) => {
           <a className="profile__hero__name" href={data.html_url}>
             {data.login}
           </a>
+          {data.blog ? (
+            <div className="profile__hero__site">
+              <a href={`https://${data.blog}`} rel="noopener noreferrer">
+                <b>Personal Site</b>
+              </a>
+            </div>
+          ) : (
+            ""
+          )}
           <div className="profile__hero__bio">{data.bio}</div>
           <div className="profile__hero__about">
             <div className="profile__hero__about__location">
@@ -137,15 +151,7 @@ export const Profile: React.FC<Props> = ({ username }) => {
               </div>
             </div>
           </div>
-          {data.blog ? (
-            <div className="profile__hero__site">
-              <a href={`https://${data.blog}`} rel="noopener noreferrer">
-                Personal Site
-              </a>
-            </div>
-          ) : (
-            ""
-          )}
+
           <div className="profile__hero__info">
             <div className="profile__hero__info__item">
               <div className="profile__hero__info__item__count">
@@ -169,25 +175,7 @@ export const Profile: React.FC<Props> = ({ username }) => {
             </div>
           </div>
         </div>
-        <div className="profile__graphs">
-          {/* <div className="profile__graphs__graph">{data.public_repos}</div>
-          <div className="profile__graphs__graph">{data.following}</div>
-          <div className="profile__graphs__graph">{data.followers}</div> */}
-          <div className="profile__graphs__graph">
-            <div className="profile__graphs__graph__title">Top Languages</div>
-            <PieGraph languages={languages} />
-          </div>
-          <div className="profile__graphs__graph">
-            <div className="profile__graphs__graph__title">Most Starred</div>
-            <BarGraph repositories={repositories} />
-          </div>
-          <div className="profile__graphs__graph">
-            <div className="profile__graphs__graph__title">
-              Stars per language
-            </div>
-            <DonutGraph />
-          </div>
-        </div>
+        <Graphs repositories={repositories} languages={languages} />
       </div>
     </>
   );
