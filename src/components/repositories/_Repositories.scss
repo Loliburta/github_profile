@@ -6,24 +6,36 @@
 
   &__repos {
     width: 100%;
-    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     &__title {
       font-size: 20px;
+      background-color: black;
     }
     &__cards {
-      max-width: 1200px;
-      box-sizing: border-box;
+      width: clamp(280px, 100vw, 1700px);
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      grid-column-gap: 0px;
-      grid-row-gap: 0px;
-      background-color: black;
-      flex-wrap: wrap;
+      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+      gap: 15px;
       &__card {
         flex-direction: column;
-        background-color: red;
+        background-color: $darkBlue;
+        border-radius: 3px;
         margin: 10px;
+        padding: 20px;
+        height: 350px;
       }
     }
+  }
+}
+
+@media (max-width: 1080px) {
+  .profile__repos__cards {
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  }
+}
+@media (max-width: 768px) {
+  .profile__repos__cards {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   }
 }

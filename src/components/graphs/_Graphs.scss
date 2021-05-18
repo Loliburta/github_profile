@@ -6,7 +6,7 @@
     justify-content: space-around;
     margin: 0 auto;
     margin-top: -50px;
-    width: clamp(300px, 100vw, 1500px);
+    width: clamp(280px, 100vw, 1500px);
     flex-wrap: wrap;
     &__graph {
       flex-direction: column;
@@ -37,5 +37,11 @@
         height: 100%;
       }
     }
+  }
+}
+
+@media (max-width: 480px) {
+  .profile__graphs__graph {
+    margin: 0px 0px 20px 0px;
   }
 }

@@ -20,7 +20,7 @@ export const Repositories: React.FC<Props> = ({ repositories }) => {
   console.log(filteredRepos);
   return (
     <div className="profile__repos">
-      <div className="profile__title"></div>
+      <div className="profile__repos__title">Top Repositories</div>
       <div className="profile__repos__cards">
         {filteredRepos.map((repo) => {
           return (
