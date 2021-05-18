@@ -11,12 +11,13 @@
     &__graph {
       flex-direction: column;
       background-color: white;
-      border-radius: 3px;
+      border-radius: 4px;
       width: clamp(280px, 35vw, 400px);
       height: clamp(350px, 40vw, 450px);
       padding: 10px clamp(5px, 1vw, 20px);
       justify-content: center;
       align-items: center;
+      margin: 0px 8px 20px 8px;
       &__title {
         color: $darkBlue;
         height: 100%;

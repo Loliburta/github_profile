@@ -8,6 +8,7 @@ import GhPolyglot from "gh-polyglot";
 
 import { r } from "../../utilities/DummyRepos";
 import { Graphs } from "../graphs/Graphs";
+import { Repositories } from "../repositories/Repositories";
 
 const d = {
   login: "Loliburta",
@@ -108,75 +109,73 @@ export const Profile: React.FC<Props> = ({ username }) => {
   }, []);
 
   return (
-    <>
-      <div className="profile">
-        <div className="profile__hero">
-          <div className="profile__hero__avatar">
-            <img
-              src={data.avatar_url}
-              alt="user avatar"
-              className="profile__hero__avatar__img"
+    <div className="profile">
+      <div className="profile__hero">
+        <div className="profile__hero__avatar">
+          <img
+            src={data.avatar_url}
+            alt="user avatar"
+            className="profile__hero__avatar__img"
+          />
+        </div>
+        <a className="profile__hero__name" href={data.html_url}>
+          {data.login}
+        </a>
+        {data.blog ? (
+          <div className="profile__hero__site">
+            <a href={`https://${data.blog}`} rel="noopener noreferrer">
+              <b>Personal Site</b>
+            </a>
+          </div>
+        ) : (
+          ""
+        )}
+        <div className="profile__hero__bio">{data.bio}</div>
+        <div className="profile__hero__about">
+          <div className="profile__hero__about__location">
+            <Icon
+              className="profile__hero__about__about__icon"
+              icon={location}
             />
-          </div>
-          <a className="profile__hero__name" href={data.html_url}>
-            {data.login}
-          </a>
-          {data.blog ? (
-            <div className="profile__hero__site">
-              <a href={`https://${data.blog}`} rel="noopener noreferrer">
-                <b>Personal Site</b>
-              </a>
-            </div>
-          ) : (
-            ""
-          )}
-          <div className="profile__hero__bio">{data.bio}</div>
-          <div className="profile__hero__about">
-            <div className="profile__hero__about__location">
-              <Icon
-                className="profile__hero__about__about__icon"
-                icon={location}
-              />
-              <div className="profile__hero__about__location__text">
-                {data.location}
-              </div>
-            </div>
-            <div className="profile__hero__about__joined">
-              <Icon
-                className="profile__hero__about__joined__icon"
-                icon={calendar}
-              />
-              <div className="profile__hero__about__joined__text">
-                Joined {createdAt}
-              </div>
+            <div className="profile__hero__about__location__text">
+              {data.location}
             </div>
           </div>
-
-          <div className="profile__hero__info">
-            <div className="profile__hero__info__item">
-              <div className="profile__hero__info__item__count">
-                {data.public_repos}
-              </div>
-              <div className="profile__hero__info__item__text">
-                REPOSITORIES
-              </div>
-            </div>
-            <div className="profile__hero__info__item">
-              <div className="profile__hero__info__item__count">
-                {data.following}
-              </div>
-              <div className="profile__hero__info__item__text">FOLLOWING</div>
-            </div>
-            <div className="profile__hero__info__item">
-              <div className="profile__hero__info__item__count">
-                {data.followers}
-              </div>
-              <div className="profile__hero__info__item__text">FOLLOWERS</div>
+          <div className="profile__hero__about__joined">
+            <Icon
+              className="profile__hero__about__joined__icon"
+              icon={calendar}
+            />
+            <div className="profile__hero__about__joined__text">
+              Joined {createdAt}
             </div>
           </div>
         </div>
-        <Graphs repositories={repositories} languages={languages} />
+
+        <div className="profile__hero__info">
+          <div className="profile__hero__info__item">
+            <div className="profile__hero__info__item__count">
+              {data.public_repos}
+            </div>
+            <div className="profile__hero__info__item__text">REPOSITORIES</div>
+          </div>
+          <div className="profile__hero__info__item">
+            <div className="profile__hero__info__item__count">
+              {data.following}
+            </div>
+            <div className="profile__hero__info__item__text">FOLLOWING</div>
+          </div>
+          <div className="profile__hero__info__item">
+            <div className="profile__hero__info__item__count">
+              {data.followers}
+            </div>
+            <div className="profile__hero__info__item__text">FOLLOWERS</div>
+          </div>
+        </div>
       </div>
-    </>
+
+      <Graphs repositories={repositories} languages={languages} />
+      <Repositories repositories={repositories} />
+    </div>
   );
 };

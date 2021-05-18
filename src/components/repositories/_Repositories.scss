@@ -1,0 +1,29 @@
+@import "../../utilities/Variables";
+
+.profile {
+  display: flex;
+  align-items: center;
+
+  &__repos {
+    width: 100%;
+    justify-content: center;
+    &__title {
+      font-size: 20px;
+    }
+    &__cards {
+      max-width: 1200px;
+      box-sizing: border-box;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      grid-column-gap: 0px;
+      grid-row-gap: 0px;
+      background-color: black;
+      flex-wrap: wrap;
+      &__card {
+        flex-direction: column;
+        background-color: red;
+        margin: 10px;
+      }
+    }
+  }
+}
