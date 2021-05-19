@@ -3,27 +3,106 @@
 .profile {
   display: flex;
   align-items: center;
-
   &__repos {
     width: 100%;
     align-items: center;
     flex-direction: column;
-    &__title {
-      font-size: 20px;
-      background-color: black;
+    padding: 100px 0px;
+
+    &__head {
+      flex-direction: row;
+      width: clamp(280px, 100vw, 1700px);
+      justify-content: space-between;
+      margin-bottom: 25px;
+      padding: 0px 10px 0px 10px;
+      align-items: center;
+      &__title {
+        font-size: $MMM;
+        color: $mostlyDarkBlue;
+        font-family: $Mono;
+        font-weight: 400;
+        letter-spacing: -1.2px;
+      }
+      &__menu {
+        background-color: black;
+      }
     }
+
     &__cards {
       width: clamp(280px, 100vw, 1700px);
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
       gap: 15px;
       &__card {
-        flex-direction: column;
-        background-color: $darkBlue;
-        border-radius: 3px;
         margin: 10px;
+        flex-direction: column;
+        background-color: $mostlyDarkBlue;
+        border-radius: 6px;
         padding: 20px;
-        height: 350px;
+        min-height: 250px;
+        max-height: 350px;
+        &__title {
+          font-size: $M;
+          font-weight: 500;
+          margin-bottom: 20px;
+          color: $softCyan;
+        }
+        &__description {
+          font-size: $SSS;
+        }
+        &__footer {
+          height: 100%;
+          align-items: flex-end;
+          color: #4fd4cc;
+          &__info {
+            justify-content: space-between;
+            width: 100%;
+            align-items: center;
+            &__group {
+              justify-content: space-between;
+              width: 200px;
+              &__language {
+                font-size: $SS;
+                align-items: center;
+                &__color {
+                  width: 10px;
+                  height: 10px;
+                  background-color: red;
+                  border-radius: 100%;
+                  margin-right: 7px;
+                }
+                &__text {
+                  font-family: $Mono;
+                  font-size: $SS;
+                }
+              }
+              &__stars {
+                align-items: center;
+                font-size: $SS;
+                &__icon {
+                  margin-top: 2px;
+                  margin-right: 5px;
+                  font-size: 16px;
+                  display: flex;
+                }
+              }
+              &__forks {
+                align-items: center;
+                font-size: $SS;
+                &__icon {
+                  margin-top: 2px;
+                  margin-right: 5px;
+                  font-size: 16px;
+                  display: flex;
+                }
+              }
+            }
+            &__size {
+              align-items: center;
+              font-size: $SS;
+            }
+          }
+        }
       }
     }
   }
