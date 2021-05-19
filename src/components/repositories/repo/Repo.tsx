@@ -40,7 +40,7 @@ export const Repo: React.FC<Props> = ({
                 }}
               ></div>
               <span className="profile__repos__cards__card__footer__info__group__language__text">
-                {language}
+                {language ? language : "Unknown"}
               </span>
             </div>
             <div className="profile__repos__cards__card__footer__info__group__stars">

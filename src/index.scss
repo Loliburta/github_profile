@@ -3,6 +3,8 @@
 //Fonts
 @import url("https://fonts.googleapis.com/css2?family=Space+Mono:wght@300;400;500;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap");
+//Bootstrap
+@import "~bootstrap/scss/bootstrap";
 //Other Scss
 @import "./components/App";
 @import "./components/profile/Profile";
@@ -25,4 +27,24 @@ body,
   color: $white;
   font-family: $Noto;
   -webkit-font-smoothing: antialiased;
+}
+
+//Customizing Bootstrap
+
+.dropdown-toggle,
+.btn,
+.btn-success {
+  background: transparent !important;
+  color: $mostlyDarkBlue !important;
+  outline: transparent !important;
+  box-shadow: none !important;
+}
+.show,
+.dropdown {
+  padding: 0px !important;
+}
+.dropdown-item {
+  padding-top: 10px !important;
+  padding-bottom: 10px !important;
+  border-radius: 3px !important;
 }

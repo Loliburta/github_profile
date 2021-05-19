@@ -14,8 +14,11 @@ button {
   border: none;
 }
 a {
-  text-decoration: none;
+  text-decoration: none !important;
   color: $bitterLime;
+  &:hover {
+    color: $bitterLime;
+  }
 }
 b {
   font-weight: 400;

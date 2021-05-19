@@ -1,6 +1,7 @@
-import React from "react";
+import { useState } from "react";
 import { LanguageColors } from "../../utilities/LanguageColors";
 import { Repo } from "./repo/Repo";
+import Dropdown from "react-bootstrap/Dropdown";
 interface Props {
   repositories: {
     name: string;
@@ -15,18 +16,54 @@ interface Props {
 }
 export const Repositories: React.FC<Props> = ({ repositories }) => {
   console.log(repositories);
-  const sortBy = ["stars", "forks", "size"];
+  const [sortBy, setSortBy] = useState("stargazers_count");
+  const [text, setText] = useState("Stars");
+  const options = ["stars", "forks", "size"];
   const filteredRepos = repositories
     .filter((repo) => !repo.fork)
-    .sort((prev, val) => val.stargazers_count - prev.stargazers_count)
+    .sort((prev: any, val: any) => val[sortBy] - prev[sortBy])
     .slice(0, 8);
   console.log(filteredRepos);
   return (
     <div className="profile__repos">
       <div className="profile__repos__head">
         <div className="profile__repos__head__title">Top Repositories</div>
-        <div className="profile__repos__head__menu">menu</div>
+        <div className="profile__repos__head__menu">
+          <div className="profile__repos__head__menu__title">Sort by</div>
+          <Dropdown>
+            <Dropdown.Toggle variant="success" id="dropdown-basic">
+              {text}
+            </Dropdown.Toggle>
+            <Dropdown.Menu>
+              <Dropdown.Item
+                onClick={() => {
+                  setText("Stars");
+                  setSortBy("stargazers_count");
+                }}
+              >
+                Stars
+              </Dropdown.Item>
+              <Dropdown.Item
+                onClick={() => {
+                  setText("Forks");
+                  setSortBy("forks_count");
+                }}
+              >
+                Forks
+              </Dropdown.Item>
+              <Dropdown.Item
+                onClick={() => {
+                  setText("Size");
+                  setSortBy("size");
+                }}
+              >
+                Size
+              </Dropdown.Item>
+            </Dropdown.Menu>
+          </Dropdown>
+        </div>
       </div>
+
       <div className="profile__repos__cards">
         {filteredRepos.map((repo) => {
           let color = "yellow";
