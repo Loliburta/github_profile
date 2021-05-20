@@ -17,6 +17,14 @@ object-assign
  * Released under the MIT License
  */
 
+/*!
+ * GitHubColors
+ *
+ * @name GitHubColors
+ * @function
+ * @return {undefined}
+ */
+
 /** @license React v0.20.2
  * scheduler.production.min.js
  *
