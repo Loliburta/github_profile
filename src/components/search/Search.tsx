@@ -8,7 +8,7 @@ export const Search = () => {
   const onChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     setUsername(e.target.value);
   };
-  const onSubmit = (event: any) => {
+  const onSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     setProfile(<Profile username={username} />);
   };

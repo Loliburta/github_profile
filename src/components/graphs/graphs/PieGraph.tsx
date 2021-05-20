@@ -4,7 +4,6 @@ interface Props {
   languages: { label: string; value: number; color: string }[];
 }
 export const PieGraph: React.FC<Props> = ({ languages }) => {
-  console.log(languages);
   const labels = languages.map((v) => {
     return v.label;
   });
@@ -14,7 +13,6 @@ export const PieGraph: React.FC<Props> = ({ languages }) => {
   const backgroundColor = languages.map((v) => {
     return v.color;
   });
-
   return (
     <Pie
       type="Pie"

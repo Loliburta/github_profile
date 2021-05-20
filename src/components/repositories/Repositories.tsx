@@ -18,12 +18,10 @@ export const Repositories: React.FC<Props> = ({ repositories }) => {
   console.log(repositories);
   const [sortBy, setSortBy] = useState("stargazers_count");
   const [text, setText] = useState("Stars");
-  const options = ["stars", "forks", "size"];
   const filteredRepos = repositories
     .filter((repo) => !repo.fork)
     .sort((prev: any, val: any) => val[sortBy] - prev[sortBy])
     .slice(0, 8);
-  console.log(filteredRepos);
   return (
     <div className="profile__repos">
       <div className="profile__repos__head">

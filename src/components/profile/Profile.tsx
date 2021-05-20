@@ -28,7 +28,6 @@ export const Profile: React.FC<Props> = ({ username }) => {
 
   useEffect(() => {
     (async () => {
-      console.log(username);
       const profile = await fetch(`https://api.github.com/users/${username}`);
       const profileJson = await profile.json();
       setData(profileJson);
@@ -41,7 +40,6 @@ export const Profile: React.FC<Props> = ({ username }) => {
           if (err) {
             console.error("Error:", err);
           }
-          console.log(stats);
           setLanguages(stats);
         });
       };
