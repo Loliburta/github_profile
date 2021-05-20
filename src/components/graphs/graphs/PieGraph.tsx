@@ -14,9 +14,6 @@ export const PieGraph: React.FC<Props> = ({ languages }) => {
   const backgroundColor = languages.map((v) => {
     return v.color;
   });
-  console.log(labels);
-  console.log(data);
-  console.log(backgroundColor);
 
   return (
     <Pie

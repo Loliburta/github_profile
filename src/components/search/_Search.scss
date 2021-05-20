@@ -7,14 +7,33 @@
   align-items: center;
   margin: 0 auto;
   height: 100vh;
+  background-color: #17171a;
+  &__icon {
+    font-size: clamp(80px, 13vw, 120px);
+    color: $verySoftCyan;
+    margin-bottom: 20px;
+  }
+  &__title {
+    font-family: $RobotoMono;
+    font-size: clamp(35px, 6vw, 64px);
+    text-align: center;
+    font-weight: 500;
+    color: $verySoftCyan;
+    margin-bottom: 44px;
+  }
   &__input {
-    border: 2px solid $black;
     border-radius: 3px;
-    width: clamp(270px, 45vw, 700px);
-    height: 35px;
+    background-color: #2a2a31;
+    width: clamp(270px, 60vw, 700px);
+
+    height: clamp(50px, 15vw, 76px);
+    font-size: clamp(30px, 7vw, 45px);
+    font-weight: 500;
+    color: $softCyan;
+    font-family: $RobotoMono;
     color: white;
     margin-bottom: 30px;
-    padding-left: 15px;
+    padding-left: 20px;
   }
   &__button {
     border: 2px solid #31231e;
