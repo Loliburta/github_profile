@@ -21,7 +21,7 @@ export const Search = () => {
       ) : (
         <div className="search">
           <Icon icon={github} className="search__icon" />
-          <div className="search__title">View your github profile</div>
+          <div className="search__title">Search for github profile</div>
           <form onSubmit={onSubmit}>
             <input
               type="text"

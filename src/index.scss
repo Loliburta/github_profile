@@ -40,12 +40,38 @@ body,
   outline: transparent !important;
   box-shadow: none !important;
 }
+.dropdown-toggle {
+  &::after {
+    display: flex;
+    margin-top: 10px;
+  }
+}
+
 .show,
-.dropdown {
+.dropdown,
+.dropdown-menu {
   padding: 0px !important;
+  background-color: transparent !important;
+}
+
+.dropdown-menu {
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23) !important;
+  display: none;
 }
 .dropdown-item {
   padding-top: 10px !important;
   padding-bottom: 10px !important;
-  border-radius: 3px !important;
+  background-color: #22252a !important;
+  color: white !important;
+  &:hover {
+    color: $kellyGreen !important;
+  }
+}
+.item1 {
+  border-top-left-radius: 3px !important;
+  border-top-right-radius: 3px !important;
+}
+.item3 {
+  border-bottom-left-radius: 3px !important;
+  border-bottom-right-radius: 3px !important;
 }

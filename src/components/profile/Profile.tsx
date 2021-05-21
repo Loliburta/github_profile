@@ -30,8 +30,8 @@ export const Profile: React.FC<Props> = ({ username }) => {
     (async () => {
       const profile = await fetch(`https://api.github.com/users/${username}`);
       const profileJson = await profile.json();
-      setData(profileJson);
       const repositories = await fetch(`${profileJson.repos_url}?per_page=100`);
+      setData(profileJson);
       setRepositories(await repositories.json());
       setCreatedAt(SetDate(profileJson.created_at));
       const getLangData = () => {
@@ -44,6 +44,7 @@ export const Profile: React.FC<Props> = ({ username }) => {
         });
       };
       getLangData();
+      console.log(location);
     })();
   }, []);
 
@@ -71,15 +72,19 @@ export const Profile: React.FC<Props> = ({ username }) => {
         )}
         <div className="profile__hero__bio">{data.bio}</div>
         <div className="profile__hero__about">
-          <div className="profile__hero__about__location">
-            <Icon
-              className="profile__hero__about__about__icon"
-              icon={location}
-            />
-            <div className="profile__hero__about__location__text">
-              {data.location}
+          {data.location ? (
+            <div className="profile__hero__about__location">
+              <Icon
+                className="profile__hero__about__about__icon"
+                icon={location}
+              />
+              <div className="profile__hero__about__location__text">
+                {data.location}
+              </div>
             </div>
-          </div>
+          ) : (
+            ""
+          )}
           <div className="profile__hero__about__joined">
             <Icon
               className="profile__hero__about__joined__icon"
@@ -112,7 +117,6 @@ export const Profile: React.FC<Props> = ({ username }) => {
           </div>
         </div>
       </div>
-
       <Graphs repositories={repositories} languages={languages} />
       <Repositories repositories={repositories} />
     </div>

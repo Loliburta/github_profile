@@ -2,6 +2,7 @@ import { useState } from "react";
 import { LanguageColors } from "../../utilities/LanguageColors";
 import { Repo } from "./repo/Repo";
 import Dropdown from "react-bootstrap/Dropdown";
+import DropdownButton from "react-bootstrap/DropdownButton";
 interface Props {
   repositories: {
     name: string;
@@ -26,39 +27,35 @@ export const Repositories: React.FC<Props> = ({ repositories }) => {
     <div className="profile__repos">
       <div className="profile__repos__head">
         <div className="profile__repos__head__title">Top Repositories</div>
-        <div className="profile__repos__head__menu">
-          <div className="profile__repos__head__menu__title">Sort by</div>
-          <Dropdown>
-            <Dropdown.Toggle variant="success" id="dropdown-basic">
-              {text}
-            </Dropdown.Toggle>
-            <Dropdown.Menu>
-              <Dropdown.Item
-                onClick={() => {
-                  setText("Stars");
-                  setSortBy("stargazers_count");
-                }}
-              >
-                Stars
-              </Dropdown.Item>
-              <Dropdown.Item
-                onClick={() => {
-                  setText("Forks");
-                  setSortBy("forks_count");
-                }}
-              >
-                Forks
-              </Dropdown.Item>
-              <Dropdown.Item
-                onClick={() => {
-                  setText("Size");
-                  setSortBy("size");
-                }}
-              >
-                Size
-              </Dropdown.Item>
-            </Dropdown.Menu>
-          </Dropdown>
+         <div className="profile__repos__head__menu">
+          <DropdownButton id="dropdown-basic-button" title={text}>
+            <Dropdown.Item
+              className="item1"
+              onClick={() => {
+                setText("Stars");
+                setSortBy("stargazers_count");
+              }}
+            >
+              Stars
+            </Dropdown.Item>
+            <Dropdown.Item
+              onClick={() => {
+                setText("Forks");
+                setSortBy("forks_count");
+              }}
+            >
+              Forks
+            </Dropdown.Item>
+            <Dropdown.Item
+              className="item3"
+              onClick={() => {
+                setText("Size");
+                setSortBy("size");
+              }}
+            >
+              Size
+            </Dropdown.Item>
+          </DropdownButton>
         </div>
       </div>
 
