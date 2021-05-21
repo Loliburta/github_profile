@@ -24,7 +24,7 @@ export const DonutGraph: React.FC<Props> = ({ repositories }) => {
       if (label) {
         return LanguageColors[label];
       }
-      return;
+      return null;
     });
   }
   return (
@@ -46,7 +46,9 @@ export const DonutGraph: React.FC<Props> = ({ repositories }) => {
           }}
         />
       ) : (
-        <div className="profile__graphs__graph__message">No stars yet, Sadge</div>
+        <div className="profile__graphs__graph__message">
+          No stars yet, Sadge
+        </div>
       )}
     </>
   );

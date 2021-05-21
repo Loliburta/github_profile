@@ -1,5 +1,13 @@
 @import "../../utilities/Variables";
 
+.loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $darkBlue;
+  width: 100vw;
+  height: 100vh;
+}
 .profile * {
   display: flex;
 }
