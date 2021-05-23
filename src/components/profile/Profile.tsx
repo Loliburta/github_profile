@@ -56,7 +56,7 @@ export const Profile: React.FC<Props> = ({ username }) => {
         <div className="loader">
           <BarLoader color="white" width={200} height={30} />
         </div>
-      ) : (
+      ) : ( 
         <div className="profile">
           <div className="profile__hero">
             <div className="profile__hero__avatar">
@@ -131,7 +131,6 @@ export const Profile: React.FC<Props> = ({ username }) => {
           <Repositories repositories={repositories} />
         </div>
       )}
-      ;
     </>
   );
 };

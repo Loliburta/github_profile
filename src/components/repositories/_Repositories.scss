@@ -64,7 +64,8 @@
             align-items: center;
             &__group {
               justify-content: space-between;
-              width: 200px;
+              width: clamp(180px, 35vw, 200px);
+              padding-right: 7px;
               &__language {
                 font-size: $SS;
                 align-items: center;
@@ -104,6 +105,7 @@
             &__size {
               align-items: center;
               font-size: $SS;
+              text-align: right;
             }
           }
         }
