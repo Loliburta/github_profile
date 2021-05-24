@@ -2,8 +2,10 @@ import { useState } from "react";
 import { Profile } from "../profile/Profile";
 import { Icon } from "@iconify/react";
 import github from "@iconify-icons/codicon/github-alt";
-
-export const Search = () => {
+interface Props {
+  message?: string;
+}
+export const Search: React.FC<Props> = ({ message }) => {
   const [username, setUsername] = useState("");
   const onChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     setUsername(e.target.value);
@@ -31,6 +33,7 @@ export const Search = () => {
               onChange={onChangeHandler}
             />
           </form>
+          {message ? <div className="search__message">Profile {message} doesn't exist</div> : ""}
         </div>
       )}
     </>

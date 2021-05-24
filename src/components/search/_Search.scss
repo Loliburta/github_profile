@@ -30,18 +30,14 @@
     font-weight: 500;
     color: $softCyan;
     font-family: $RobotoMono;
-    color: white;
-    margin-bottom: 30px;
+    margin-bottom: 40px;
     padding-left: 20px;
   }
-  &__button {
-    border: 2px solid #31231e;
-    border-radius: 3px;
-    width: 120px;
-    height: 35px;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    cursor: pointer;
+  &__message {
+    width: clamp(270px, 60vw, 700px);
+    text-align: center;
+    color: $verySoftCyan;
+    flex-wrap: wrap;
+    font-size: clamp(20px, 3.3vw, 35px);
   }
 }
