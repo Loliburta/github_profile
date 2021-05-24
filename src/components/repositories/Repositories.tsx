@@ -16,7 +16,6 @@ interface Props {
   }[];
 }
 export const Repositories: React.FC<Props> = ({ repositories }) => {
-  console.log(repositories);
   const [sortBy, setSortBy] = useState("stargazers_count");
   const [text, setText] = useState("Stars");
   const filteredRepos = repositories
@@ -27,7 +26,7 @@ export const Repositories: React.FC<Props> = ({ repositories }) => {
     <div className="profile__repos">
       <div className="profile__repos__head">
         <div className="profile__repos__head__title">Top Repositories</div>
-         <div className="profile__repos__head__menu">
+        <div className="profile__repos__head__menu">
           <DropdownButton id="dropdown-basic-button" title={text}>
             <Dropdown.Item
               className="item1"
@@ -67,6 +66,7 @@ export const Repositories: React.FC<Props> = ({ repositories }) => {
           }
           return (
             <Repo
+              key={repo.name}
               name={repo.name}
               html_url={repo.html_url}
               description={repo.description}

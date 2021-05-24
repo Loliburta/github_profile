@@ -33,27 +33,29 @@ export const Profile: React.FC<Props> = ({ username }) => {
   useEffect(() => {
     (async () => {
       const profile = await fetch(`https://api.github.com/users/${username}`);
-      console.log(profile.status);
       if (profile.status === 404) {
         isLoading(false);
         isExisting(false);
+      } else {
+        const profileJson = await profile.json();
+        const repositories = await fetch(
+          `${profileJson.repos_url}?per_page=100`
+        );
+        setData(profileJson);
+        setRepositories(await repositories.json());
+        setCreatedAt(SetDate(profileJson.created_at));
+        const getLangData = async () => {
+          const me = new GhPolyglot(username);
+          me.userStats((err: any, stats: any) => {
+            if (err) {
+              console.error("Error:", err);
+            }
+            setLanguages(stats);
+            isLoading(false);
+          });
+        };
+        await getLangData();
       }
-      const profileJson = await profile.json();
-      const repositories = await fetch(`${profileJson.repos_url}?per_page=100`);
-      setData(profileJson);
-      setRepositories(await repositories.json());
-      setCreatedAt(SetDate(profileJson.created_at));
-      const getLangData = async () => {
-        const me = new GhPolyglot(username);
-        me.userStats((err: any, stats: any) => {
-          if (err) {
-            console.error("Error:", err);
-          }
-          setLanguages(stats);
-          isLoading(false);
-        });
-      };
-      await getLangData();
     })();
   }, [username]);
 
