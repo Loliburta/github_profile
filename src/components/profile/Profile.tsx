@@ -8,6 +8,7 @@ import { Graphs } from "../graphs/Graphs";
 import { Repositories } from "../repositories/Repositories";
 import { BarLoader } from "react-spinners";
 import { Search } from "../search/Search";
+import { InfoItem } from "./infoItem/InfoItem";
 
 interface Props {
   username: string;
@@ -114,32 +115,10 @@ export const Profile: React.FC<Props> = ({ username }) => {
                     </div>
                   </div>
                 </div>
-
                 <div className="profile__hero__info">
-                  <div className="profile__hero__info__item">
-                    <div className="profile__hero__info__item__count">
-                      {data.public_repos}
-                    </div>
-                    <div className="profile__hero__info__item__text">
-                      REPOSITORIES
-                    </div>
-                  </div>
-                  <div className="profile__hero__info__item">
-                    <div className="profile__hero__info__item__count">
-                      {data.following}
-                    </div>
-                    <div className="profile__hero__info__item__text">
-                      FOLLOWING
-                    </div>
-                  </div>
-                  <div className="profile__hero__info__item">
-                    <div className="profile__hero__info__item__count">
-                      {data.followers}
-                    </div>
-                    <div className="profile__hero__info__item__text">
-                      FOLLOWERS
-                    </div>
-                  </div>
+                  <InfoItem count={data.public_repos} text="REPOSITORIES" />
+                  <InfoItem count={data.following} text="FOLLOWING" />
+                  <InfoItem count={data.followers} text="FOLLOWERS" />
                 </div>
               </div>
               <Graphs repositories={repositories} languages={languages} />

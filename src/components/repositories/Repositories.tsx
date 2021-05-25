@@ -60,10 +60,7 @@ export const Repositories: React.FC<Props> = ({ repositories }) => {
 
       <div className="profile__repos__cards">
         {filteredRepos.map((repo) => {
-          let color = "yellow";
-          if (repo.language) {
-            color = LanguageColors[repo.language];
-          }
+          let color = repo.language ? LanguageColors[repo.language] : "yellow";
           return (
             <Repo
               key={repo.name}
