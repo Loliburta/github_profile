@@ -75,3 +75,20 @@ body,
   border-bottom-left-radius: 3px !important;
   border-bottom-right-radius: 3px !important;
 }
+
+//Sidebar
+
+::-webkit-scrollbar {
+  width: 9px;
+  height: 9px;
+ }
+ ::-webkit-scrollbar-thumb {
+  background: #0b0c10;
+ }
+ ::-webkit-scrollbar-thumb:hover{
+  background: #0b0c10;
+ }
+ ::-webkit-scrollbar-track{
+  background: #cafafe;
+  box-shadow: inset 7px 10px 12px #f0f0f0;
+ }
